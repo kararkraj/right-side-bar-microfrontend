@@ -94,11 +94,12 @@ export class MemoryMeterComponent implements OnInit, AfterViewInit, OnChanges {
 
   updateMemoryMeter(percentRAMUsage: number) {
     this.memoryMergeOptions = {
+      color: percentRAMUsage >= 70 ? 'red' : '#5470c6',
       series: {
         data: [
           {
             value: percentRAMUsage,
-            name: 'RAM'
+            name: 'RAM',
           }
         ]
       }
@@ -107,6 +108,7 @@ export class MemoryMeterComponent implements OnInit, AfterViewInit, OnChanges {
 
   updateCPUMeter(CPUUsage: number) {
     this.cpuMergeOptions = {
+      color: CPUUsage >= 50 ? 'red' : '#5470c6',
       series: {
         data: [
           {
